@@ -23,7 +23,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         className,
       ])}
     >
-      <button type="button" onClick={onToggle}>toggle</button>
+      <button type="button" onClick={onToggle}>{'<<_>>'}</button>
       <div className={s.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={s.langSwitcher} />
