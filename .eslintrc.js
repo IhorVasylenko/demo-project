@@ -31,7 +31,19 @@ module.exports = {
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     'import/extensions': 'off',
-    'import/no-extraneous-dependencies': 'warn',
+    'import/no-extraneous-dependencies': [
+      'warn',
+      {
+        devDependencies: [
+          'test.{ts,tsx}',
+          'test-*.{ts,tsx}',
+          '**/*{.,_}{test,spec}.{ts,tsx}',
+          '**/jest.config.ts',
+          '**/jest.setup.ts',
+        ],
+        optionalDependencies: false,
+      },
+    ],
     'no-underscore-dangle': 'off',
     'no-duplicate-imports': 'error',
     'spaced-comment': 'warn',
@@ -53,4 +65,12 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };
