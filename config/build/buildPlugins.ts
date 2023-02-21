@@ -10,7 +10,7 @@ export function buildPlugins({
   isDev,
   analyze,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
@@ -22,11 +22,18 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new ReactRefreshWebpackPlugin(),
-    // process.env.analyze && new BundleAnalyzerPlugin(),
-    new BundleAnalyzerPlugin(
-      { analyzerMode: analyze ? 'server' : 'disabled' },
-    ),
   ];
+
+  if (isDev) {
+    plugins.push(
+      new webpack.HotModuleReplacementPlugin(),
+      new ReactRefreshWebpackPlugin(),
+      // process.env.analyze && new BundleAnalyzerPlugin(),
+      new BundleAnalyzerPlugin({
+        analyzerMode: analyze ? 'server' : 'disabled',
+      }),
+    );
+  }
+
+  return plugins;
 }
