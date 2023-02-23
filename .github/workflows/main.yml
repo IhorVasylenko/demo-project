@@ -10,9 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        # os: [ubuntu-latest, [self-hosted, macOS]]
-        os: [ macOS ]
-        # os: [ ubuntu-latest ]
+        os: [ ubuntu-latest ]
         node-version: [ 17.x ]
 
     steps:
