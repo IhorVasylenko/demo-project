@@ -41,7 +41,7 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add -f .loki/difference
-          git add
+          git add .
           git checkout -b save-screenshots
           git commit -am "screenshots failure"
           git push -f origin save-screenshots
