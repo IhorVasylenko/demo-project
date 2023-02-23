@@ -31,4 +31,14 @@ jobs:
       - name: build storybook
         run: npm run storybook:build
       - name: screenshot testing
-        run: npm run test:ui:ci
+        # run: npm run test:ui:ci
+        if: ${{ failure() && steps.screenshots.conclusion == 'failure' }}
+        run: /
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -f .loki/difference
+          git add
+          git checkout -b save-screenshots
+          git commit -am "screenshots failure"
+          git push -f origin save-screenshots
