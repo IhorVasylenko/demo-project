@@ -61,6 +61,7 @@ module.exports = {
       { markupOnly: true, onlyAttribute: [''] },
     ],
     'max-len': ['error', { ignoreComments: true, code: 120 }],
+    'linebreak-style': 0,
   },
   globals: {
     __IS_DEV__: true,
