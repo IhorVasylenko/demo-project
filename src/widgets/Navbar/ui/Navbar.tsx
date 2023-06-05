@@ -1,10 +1,9 @@
 /* eslint-disable i18next/no-literal-string */
-import { FC, useCallback, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Modal } from 'shared/ui/Modal/Modal';
-import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
+import { FC, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import s from './Navbar.module.scss';
 
 interface NavbarProps {
