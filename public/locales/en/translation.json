@@ -2,8 +2,9 @@
   "Введите username": "Enter username",
   "Введите пароль": "Enter password",
   "Войти": "Login",
-  "Главная страница": "",
+  "Вы ввели неверный логтн или пароль": "Wrong login or password",
+  "Выйти": "Exit",
   "Короткий язык": "En",
-  "О сайте": "",
+  "Форма авторизации": "Authorization form",
   "Язык": "English"
 }
